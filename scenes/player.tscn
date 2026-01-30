@@ -1,0 +1,146 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp4ubw1xieqy0"]
+
+[ext_resource type="Script" uid="uid://bo36xjmo0466u" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Material" uid="uid://byq8rqg6ja405" path="res://grid_material.tres" id="2_i3pqv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqtel"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sweqy"]
+material = SubResource("StandardMaterial3D_hqtel")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2hs0m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2els"]
+bg_color = Color(0.89059, 0.89059, 0.8905901, 1)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_onrkg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_i3pqv")
+mesh = SubResource("CapsuleMesh_sweqy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_2hs0m")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+
+[node name="RayCast3D" type="RayCast3D" parent="CameraPivot"]
+target_position = Vector3(0, 0, -5)
+collision_mask = 6
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+
+[node name="DayLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -11.5
+offset_right = 21.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Day 1"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -295.0
+offset_top = 44.0
+offset_right = -60.0
+offset_bottom = 99.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "E to interact"
+
+[node name="HideWhenAnimation" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/HideWhenAnimation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -315.0
+offset_top = 61.0
+offset_right = 315.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(6.738305e-07, 0.7916045, 0.48506433, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/fill = SubResource("StyleBoxFlat_g2els")
+value = 0.18
+
+[node name="TargetText" type="Label" parent="CanvasLayer/HideWhenAnimation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_top = 22.0
+offset_right = 94.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 27
+text = "TARGET: 1,00,00,000"
+
+[node name="GoToBed" type="Label" parent="CanvasLayer/HideWhenAnimation"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -298.0
+offset_top = 932.0
+offset_right = 285.0
+offset_bottom = 974.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Gogo Gaga! It's night time, Go to bed!"
+horizontal_alignment = 1
+
+[node name="GoToPC" type="Label" parent="CanvasLayer/HideWhenAnimation"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -201.0
+offset_top = 932.0
+offset_right = 188.0
+offset_bottom = 974.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Money won't come from dream! Go to PC now!"
+horizontal_alignment = 1

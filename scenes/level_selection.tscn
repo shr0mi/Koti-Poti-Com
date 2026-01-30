@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://qdnpo4rk5a8q"]
+
+[ext_resource type="Script" uid="uid://dtb5mj3yr5w0r" path="res://level_selection.gd" id="1_u1g2d"]
+
+[node name="level_selection" type="Node2D"]
+script = ExtResource("1_u1g2d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1918.0
+offset_bottom = 1079.0
+color = Color(0.9362314, 0.7953642, 0.7512673, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 738.0
+offset_top = 204.0
+offset_right = 1187.0
+offset_bottom = 287.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Select Difficulty"
+
+[node name="Easy" type="Button" parent="."]
+custom_minimum_size = Vector2(250, 0)
+offset_left = 561.0
+offset_top = 414.0
+offset_right = 811.0
+offset_bottom = 485.0
+theme_override_font_sizes/font_size = 45
+text = "Easy"
+
+[node name="Hard" type="Button" parent="."]
+custom_minimum_size = Vector2(250, 0)
+offset_left = 1102.0
+offset_top = 410.0
+offset_right = 1352.0
+offset_bottom = 481.0
+theme_override_font_sizes/font_size = 45
+text = "Hard
+"
+
+[node name="Label2" type="Label" parent="."]
+custom_minimum_size = Vector2(250, 0)
+offset_left = 561.0
+offset_top = 533.0
+offset_right = 811.0
+offset_bottom = 1516.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "- One person from each country is reliable
+"
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="."]
+custom_minimum_size = Vector2(250, 0)
+offset_left = 1102.0
+offset_top = 533.0
+offset_right = 1352.0
+offset_bottom = 1516.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "- Only One person is reliable
+- Accuracy is randomized every 10 days
+
+"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="Hard" to="." method="_on_hard_pressed"]

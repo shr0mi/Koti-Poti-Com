@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0neep4jf1nga"]
+
+[ext_resource type="Script" uid="uid://ci41rt2wilgam" path="res://game_over.gd" id="1_xeevv"]
+[ext_resource type="Texture2D" uid="uid://g54ld8k7rbgb" path="res://assets/koti-poti/Fokir (1).png" id="2_wqhvx"]
+
+[sub_resource type="FontFile" id="FontFile_tbwuq"]
+cache/0/55/0/ascent = 0.0
+cache/0/55/0/descent = 0.0
+cache/0/55/0/underline_position = 0.0
+cache/0/55/0/underline_thickness = 0.0
+cache/0/55/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_xeevv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.98640877, 0.91154957, 0.8935552, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_wqhvx")
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -923.0
+offset_top = -76.0
+offset_right = 183.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_tbwuq")
+theme_override_font_sizes/font_size = 55
+text = "Days survived: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+custom_minimum_size = Vector2(500, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -629.0
+offset_top = 195.0
+offset_right = -129.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Return to Main Menu"
+autowrap_trim_flags = 0
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

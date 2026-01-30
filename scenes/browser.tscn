@@ -1,0 +1,863 @@
+[gd_scene load_steps=34 format=3 uid="uid://duijqucq70q2m"]
+
+[ext_resource type="Script" uid="uid://bjnkwb0kgbict" path="res://scripts/browser.gd" id="1_1qmiu"]
+[ext_resource type="Texture2D" uid="uid://j5uv2g3i3j3w" path="res://assets/close.png" id="2_tcvq3"]
+[ext_resource type="Texture2D" uid="uid://ldkrw2pbulcu" path="res://assets/koti-poti/koti-poti-tab.png" id="3_itn0k"]
+[ext_resource type="Texture2D" uid="uid://c7dhbr547iu0f" path="res://assets/koti-poti/koti-poti.png" id="3_lpngn"]
+[ext_resource type="Texture2D" uid="uid://ci7rutiy3ylnk" path="res://assets/topbar.png" id="3_v7wwx"]
+[ext_resource type="Texture2D" uid="uid://beb886gm2kymt" path="res://assets/kichir-michir/kichir-michir-tab.png" id="4_04805"]
+[ext_resource type="Texture2D" uid="uid://k1tj6760ynkx" path="res://assets/koti-poti/Asset 11.png" id="5_1sr4f"]
+[ext_resource type="Texture2D" uid="uid://d0j0mrb4hxx5x" path="res://assets/chander-alo/chander-alo.png" id="5_fewko"]
+[ext_resource type="Texture2D" uid="uid://blkb1q6sybheb" path="res://assets/kichir-michir/Kichir-michir.png" id="5_hthl3"]
+[ext_resource type="Texture2D" uid="uid://da4ssf6qlx7d8" path="res://assets/koti-poti/investBtn.png" id="5_opbo2"]
+[ext_resource type="Texture2D" uid="uid://b126q0602ppuv" path="res://assets/kichir-michir/rsz_2trump-1.png" id="6_aa5rk"]
+[ext_resource type="Texture2D" uid="uid://c0xuhouyvxkf7" path="res://assets/koti-poti/Asset 9.png" id="6_rga6v"]
+[ext_resource type="Texture2D" uid="uid://blyamkxgpq065" path="res://assets/koti-poti/investBtn-selected.png" id="6_ucnkt"]
+[ext_resource type="Texture2D" uid="uid://c6qqphp86i1d1" path="res://assets/koti-poti/Asset 10.png" id="7_445cg"]
+[ext_resource type="PackedScene" uid="uid://c53qsiy35iqej" path="res://scenes/counter.tscn" id="8_dcvto"]
+[ext_resource type="Texture2D" uid="uid://clbnpw0oo2wl5" path="res://assets/kichir-michir/MELON.png" id="8_golyr"]
+[ext_resource type="Texture2D" uid="uid://bw2tt72ovxsy3" path="res://assets/koti-poti/plus-normal.png" id="9_2w017"]
+[ext_resource type="Texture2D" uid="uid://b2fgsvgg5w8vx" path="res://assets/kichir-michir/herome_final.png" id="9_dl2ur"]
+[ext_resource type="Texture2D" uid="uid://ctbrjuipqbm7w" path="res://assets/kichir-michir/YUNUS-1.png" id="10_3378f"]
+[ext_resource type="Texture2D" uid="uid://bey4v7c4ndt2v" path="res://assets/koti-poti/plus-hover.png" id="10_itn0k"]
+[ext_resource type="Texture2D" uid="uid://cgavsgifgpysr" path="res://assets/koti-poti/minus-normal.png" id="11_04805"]
+[ext_resource type="Texture2D" uid="uid://3sn468kuc3s8" path="res://assets/kichir-michir/TARIK_FINAL.png" id="11_dcvto"]
+[ext_resource type="Texture2D" uid="uid://dit4q5rdi1tst" path="res://assets/kichir-michir/shafiq.png" id="12_dl2ur"]
+[ext_resource type="Texture2D" uid="uid://db4b1c745prfo" path="res://assets/koti-poti/minus-hover.png" id="12_hthl3"]
+[ext_resource type="Texture2D" uid="uid://c71ekhbpsuubi" path="res://assets/chander-alo/Chander_Alo.png" id="18_ge1lr"]
+[ext_resource type="Texture2D" uid="uid://xys7iw5jrqwf" path="res://assets/check.png" id="25_36f7f"]
+[ext_resource type="AudioStream" uid="uid://jmy1opcnss1c" path="res://audio/StockTune-Trading Floor Chronicles_1769375372.mp3" id="25_3378f"]
+
+[sub_resource type="Gradient" id="Gradient_04805"]
+colors = PackedColorArray(0.8862616, 0.88626146, 0.8862615, 1, 0.8862745, 0.8862745, 0.8862745, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hthl3"]
+gradient = SubResource("Gradient_04805")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aa5rk"]
+texture = SubResource("GradientTexture1D_hthl3")
+
+[sub_resource type="Gradient" id="Gradient_v7wwx"]
+colors = PackedColorArray(1.02277845e-07, 0.102988936, 0.24166894, 1, 0, 0.101960786, 0.24313726, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lpngn"]
+gradient = SubResource("Gradient_v7wwx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opbo2"]
+texture = SubResource("GradientTexture2D_lpngn")
+modulate_color = Color(1, 1, 1, 0.8666667)
+
+[node name="Browser" type="Node2D"]
+script = ExtResource("1_1qmiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 103)
+texture = ExtResource("3_v7wwx")
+
+[node name="KotiPotiTab" type="TextureButton" parent="."]
+offset_left = 793.0
+offset_top = 65.0
+offset_right = 1158.0
+offset_bottom = 129.0
+texture_normal = ExtResource("3_itn0k")
+
+[node name="KichirMichirTab" type="TextureButton" parent="."]
+offset_left = 413.0
+offset_top = 65.0
+offset_right = 778.0
+offset_bottom = 129.0
+texture_normal = ExtResource("4_04805")
+
+[node name="ChanderAloTab" type="TextureButton" parent="."]
+offset_left = 34.0
+offset_top = 65.0
+offset_right = 399.0
+offset_bottom = 129.0
+texture_normal = ExtResource("5_fewko")
+
+[node name="KichirMichirPage" type="Node2D" parent="."]
+visible = false
+
+[node name="KichirMichir1" type="Sprite2D" parent="KichirMichirPage"]
+position = Vector2(960, 643)
+texture = ExtResource("5_hthl3")
+
+[node name="DjtPost" type="PanelContainer" parent="KichirMichirPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 24.0
+offset_top = 416.0
+offset_right = 624.0
+offset_bottom = 616.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="KichirMichirPage/DjtPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KichirMichirPage/DjtPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KichirMichirPage/DjtPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="KichirMichirPage/DjtPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_aa5rk")
+
+[node name="Label" type="Label" parent="KichirMichirPage/DjtPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Lodal Pump"
+
+[node name="Control" type="Control" parent="KichirMichirPage/DjtPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Counter" parent="KichirMichirPage/DjtPost/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_dcvto")]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="KichirMichirPage/DjtPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Just Found this out"
+autowrap_mode = 3
+
+[node name="MuskPost" type="PanelContainer" parent="KichirMichirPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 644.0
+offset_top = 418.0
+offset_right = 1244.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="KichirMichirPage/MuskPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KichirMichirPage/MuskPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KichirMichirPage/MuskPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="KichirMichirPage/MuskPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_golyr")
+
+[node name="Label" type="Label" parent="KichirMichirPage/MuskPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Melon Husk"
+
+[node name="Control" type="Control" parent="KichirMichirPage/MuskPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Counter" parent="KichirMichirPage/MuskPost/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_dcvto")]
+layout_mode = 2
+var_name = "elon_guess"
+
+[node name="Label2" type="Label" parent="KichirMichirPage/MuskPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Just Found this out"
+autowrap_mode = 3
+
+[node name="PowellPost" type="PanelContainer" parent="KichirMichirPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 1266.0
+offset_top = 418.0
+offset_right = 1866.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="KichirMichirPage/PowellPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KichirMichirPage/PowellPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KichirMichirPage/PowellPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="KichirMichirPage/PowellPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_dl2ur")
+
+[node name="Label" type="Label" parent="KichirMichirPage/PowellPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Herome Powell"
+
+[node name="Control" type="Control" parent="KichirMichirPage/PowellPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Counter" parent="KichirMichirPage/PowellPost/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_dcvto")]
+layout_mode = 2
+var_name = "powell_guess"
+
+[node name="Label2" type="Label" parent="KichirMichirPage/PowellPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Just Found this out"
+autowrap_mode = 3
+
+[node name="YunusPost" type="PanelContainer" parent="KichirMichirPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 26.0
+offset_top = 753.0
+offset_right = 626.0
+offset_bottom = 953.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="KichirMichirPage/YunusPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KichirMichirPage/YunusPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KichirMichirPage/YunusPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="KichirMichirPage/YunusPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("10_3378f")
+
+[node name="Label" type="Label" parent="KichirMichirPage/YunusPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Yusuf Sarker"
+
+[node name="Control" type="Control" parent="KichirMichirPage/YunusPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Counter" parent="KichirMichirPage/YunusPost/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_dcvto")]
+layout_mode = 2
+var_name = "yunus_guess"
+
+[node name="Label2" type="Label" parent="KichirMichirPage/YunusPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Just Found this out"
+autowrap_mode = 3
+
+[node name="TarekPost" type="PanelContainer" parent="KichirMichirPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 644.0
+offset_top = 754.0
+offset_right = 1244.0
+offset_bottom = 954.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="KichirMichirPage/TarekPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KichirMichirPage/TarekPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KichirMichirPage/TarekPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="KichirMichirPage/TarekPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_dcvto")
+
+[node name="Label" type="Label" parent="KichirMichirPage/TarekPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Tarik G-Ya"
+
+[node name="Control" type="Control" parent="KichirMichirPage/TarekPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Counter" parent="KichirMichirPage/TarekPost/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_dcvto")]
+layout_mode = 2
+var_name = "tarik_guess"
+
+[node name="Label2" type="Label" parent="KichirMichirPage/TarekPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Just Found this out"
+autowrap_mode = 3
+
+[node name="ShafiqurPost" type="PanelContainer" parent="KichirMichirPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 1271.0
+offset_top = 750.0
+offset_right = 1871.0
+offset_bottom = 950.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="KichirMichirPage/ShafiqurPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KichirMichirPage/ShafiqurPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KichirMichirPage/ShafiqurPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="KichirMichirPage/ShafiqurPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("12_dl2ur")
+
+[node name="Label" type="Label" parent="KichirMichirPage/ShafiqurPost/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Shafiq Daktar"
+
+[node name="Control" type="Control" parent="KichirMichirPage/ShafiqurPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Counter" parent="KichirMichirPage/ShafiqurPost/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("8_dcvto")]
+layout_mode = 2
+var_name = "shafiq_guess"
+
+[node name="Label2" type="Label" parent="KichirMichirPage/ShafiqurPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Just Found this out"
+autowrap_mode = 3
+
+[node name="KotiPotiPage" type="Node2D" parent="."]
+
+[node name="KotiPoti" type="Sprite2D" parent="KotiPotiPage"]
+position = Vector2(959, 644)
+texture = ExtResource("3_lpngn")
+
+[node name="InvestBtn" type="TextureButton" parent="KotiPotiPage"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1378.0
+offset_top = 862.0
+offset_right = 1800.0
+offset_bottom = 989.0005
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("5_opbo2")
+texture_pressed = ExtResource("5_opbo2")
+texture_hover = ExtResource("6_ucnkt")
+
+[node name="BdtBtn" type="TextureButton" parent="KotiPotiPage"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 235.0
+offset_top = 869.0
+offset_right = 483.0
+offset_bottom = 982.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("5_1sr4f")
+
+[node name="UsdBtn" type="TextureButton" parent="KotiPotiPage"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 837.0
+offset_top = 869.0
+offset_right = 1085.0
+offset_bottom = 982.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("6_rga6v")
+texture_pressed = ExtResource("6_rga6v")
+texture_hover = ExtResource("7_445cg")
+
+[node name="Money" type="Label" parent="KotiPotiPage"]
+offset_left = 1501.0
+offset_top = 682.0
+offset_right = 1672.0
+offset_bottom = 765.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "10000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusBtn" type="TextureButton" parent="KotiPotiPage"]
+offset_left = 1743.0
+offset_top = 689.0
+offset_right = 1819.0
+offset_bottom = 765.0
+texture_normal = ExtResource("9_2w017")
+texture_pressed = ExtResource("9_2w017")
+texture_hover = ExtResource("10_itn0k")
+
+[node name="MinusBtn" type="TextureButton" parent="KotiPotiPage"]
+offset_left = 1351.0
+offset_top = 688.0
+offset_right = 1428.0
+offset_bottom = 765.0
+texture_normal = ExtResource("11_04805")
+texture_pressed = ExtResource("11_04805")
+texture_hover = ExtResource("12_hthl3")
+
+[node name="ChanderAloPage" type="Node2D" parent="."]
+visible = false
+
+[node name="ChanderAlo" type="Sprite2D" parent="ChanderAloPage"]
+position = Vector2(960, 642)
+texture = ExtResource("18_ge1lr")
+
+[node name="DjtPost" type="PanelContainer" parent="ChanderAloPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 24.0
+offset_top = 416.0
+offset_right = 624.0
+offset_bottom = 616.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="ChanderAloPage/DjtPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChanderAloPage/DjtPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChanderAloPage/DjtPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ChanderAloPage/DjtPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
+theme_override_font_sizes/font_size = 25
+text = "Analysis: Pump's Statement"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TrueFalse" type="TextureRect" parent="ChanderAloPage/DjtPost/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("25_36f7f")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="ChanderAloPage/DjtPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Dollar Hits Record Highs as Global Demand Surges"
+autowrap_mode = 3
+
+[node name="MuskPost" type="PanelContainer" parent="ChanderAloPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 644.0
+offset_top = 418.0
+offset_right = 1244.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="ChanderAloPage/MuskPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChanderAloPage/MuskPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChanderAloPage/MuskPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ChanderAloPage/MuskPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
+theme_override_font_sizes/font_size = 25
+text = "Analysis: Mellon's Statement"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TrueFalse" type="TextureRect" parent="ChanderAloPage/MuskPost/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("25_36f7f")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="ChanderAloPage/MuskPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Just Found this out"
+autowrap_mode = 3
+
+[node name="PowellPost" type="PanelContainer" parent="ChanderAloPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 1266.0
+offset_top = 418.0
+offset_right = 1866.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="ChanderAloPage/PowellPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChanderAloPage/PowellPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChanderAloPage/PowellPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ChanderAloPage/PowellPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
+theme_override_font_sizes/font_size = 25
+text = "Analysis: Powell's Statement"
+autowrap_mode = 3
+
+[node name="TrueFalse" type="TextureRect" parent="ChanderAloPage/PowellPost/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("25_36f7f")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="ChanderAloPage/PowellPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Just Found this out"
+autowrap_mode = 3
+
+[node name="YunusPost" type="PanelContainer" parent="ChanderAloPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 26.0
+offset_top = 753.0
+offset_right = 626.0
+offset_bottom = 953.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="ChanderAloPage/YunusPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChanderAloPage/YunusPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChanderAloPage/YunusPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ChanderAloPage/YunusPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
+theme_override_font_sizes/font_size = 25
+text = "Analysis: Yusuf's Statement"
+autowrap_mode = 3
+
+[node name="TrueFalse" type="TextureRect" parent="ChanderAloPage/YunusPost/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("25_36f7f")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="ChanderAloPage/YunusPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Just Found this out"
+autowrap_mode = 3
+
+[node name="TarekPost" type="PanelContainer" parent="ChanderAloPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 644.0
+offset_top = 754.0
+offset_right = 1244.0
+offset_bottom = 954.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="ChanderAloPage/TarekPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChanderAloPage/TarekPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChanderAloPage/TarekPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ChanderAloPage/TarekPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
+theme_override_font_sizes/font_size = 25
+text = "Analysis: Tarik's Statement"
+autowrap_mode = 3
+
+[node name="TrueFalse" type="TextureRect" parent="ChanderAloPage/TarekPost/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("25_36f7f")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="ChanderAloPage/TarekPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Just Found this out"
+autowrap_mode = 3
+
+[node name="ShafiqurPost" type="PanelContainer" parent="ChanderAloPage"]
+custom_minimum_size = Vector2(600, 200)
+offset_left = 1271.0
+offset_top = 750.0
+offset_right = 1871.0
+offset_bottom = 950.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aa5rk")
+
+[node name="MarginContainer" type="MarginContainer" parent="ChanderAloPage/ShafiqurPost"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChanderAloPage/ShafiqurPost/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChanderAloPage/ShafiqurPost/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ChanderAloPage/ShafiqurPost/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
+theme_override_font_sizes/font_size = 25
+text = "Analysis: Daktar's Statement"
+autowrap_mode = 3
+
+[node name="TrueFalse" type="TextureRect" parent="ChanderAloPage/ShafiqurPost/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("25_36f7f")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="ChanderAloPage/ShafiqurPost/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Just Found this out"
+autowrap_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Balance" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_top = 7.075
+offset_right = 59.0
+offset_bottom = 30.07502
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0.5647059, 1)
+theme_override_font_sizes/font_size = 30
+text = "Balance: 10000"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Close"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CloseBtn" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -71.18994
+offset_top = 64.13
+offset_right = -7.1899414
+offset_bottom = 129.1301
+grow_horizontal = 0
+texture_normal = ExtResource("2_tcvq3")
+
+[node name="Dialog_Overlay" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color(1, 1, 1, 0.6901961)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00069389754, 0.00069389766, 0.0006938976, 1)
+
+[node name="RentDialog" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_opbo2")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/RentDialog"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/RentDialog/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/RentDialog/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Congrats! You Lived Another Day to trade!
+x amount of rent was paid!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm" type="Button" parent="CanvasLayer/RentDialog/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.44804525, 0.9999997, 0.7185301, 1)
+theme_override_font_sizes/font_size = 40
+text = "Ok"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_3378f")
+volume_db = -25.0
+autoplay = true
+
+[connection signal="pressed" from="KotiPotiTab" to="." method="_on_koti_poti_tab_pressed"]
+[connection signal="pressed" from="KichirMichirTab" to="." method="_on_kichir_michir_tab_pressed"]
+[connection signal="pressed" from="ChanderAloTab" to="." method="_on_chander_alo_tab_pressed"]
+[connection signal="pressed" from="KotiPotiPage/InvestBtn" to="." method="_on_invest_btn_pressed"]
+[connection signal="pressed" from="KotiPotiPage/BdtBtn" to="." method="_on_bdt_btn_pressed"]
+[connection signal="pressed" from="KotiPotiPage/UsdBtn" to="." method="_on_usd_btn_pressed"]
+[connection signal="pressed" from="KotiPotiPage/MinusBtn" to="." method="_on_minus_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/CloseBtn" to="." method="_on_close_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/RentDialog/MarginContainer/VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

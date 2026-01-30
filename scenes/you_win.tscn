@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwxjciqhyosw2"]
+
+[ext_resource type="Script" uid="uid://bg61b4ke2o2al" path="res://scripts/you_win.gd" id="1_iblaa"]
+[ext_resource type="Texture2D" uid="uid://c3blsk4khum0r" path="res://assets/koti-poti/koti-poti ui.png" id="2_ibln8"]
+
+[node name="YouWin" type="Node2D"]
+script = ExtResource("1_iblaa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.737193, 0.7371929, 0.73719305, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_ibln8")
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -566.0
+offset_top = 93.0
+offset_right = 540.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Days survived: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+custom_minimum_size = Vector2(500, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = 279.0
+offset_right = 228.0
+offset_bottom = 342.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "MAIN MENU"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
